@@ -17,3 +17,11 @@ CREATE TABLE employers (
     yearly_revenue FLOAT CHECK (yearly_revenue > 0),
     is_hiring BOOLEAN DEFAULT FALSE
 )
+
+CREATE TABLE conversations (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    employer_id INT,
+    message TEXT NOT NULL
+    data_sent TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+)
