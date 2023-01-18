@@ -7,7 +7,11 @@
 -- ORDER BY u.id DESC;
 
 
-SELECT * 
-FROM users AS u
-RIGHT JOIN addresses AS adrs ON u.address_id = adrs.id
-LEFT JOIN cities as ct ON ct.id = adrs.city_id;
+-- SELECT * 
+-- FROM users AS u
+-- RIGHT JOIN addresses AS adrs ON u.address_id = adrs.id
+-- LEFT JOIN cities as ct ON ct.id = adrs.city_id;
+
+SELECT c.name AS city_name
+FROM cities AS c
+INNER JOIN addresses as adrs ON c.id = adrs.city_id;
