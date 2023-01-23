@@ -39,3 +39,8 @@ CREATE TABLE intranet_accounts (
     password VARCHAR(300) NOT NULL
 );
 
+CREATE TABLE projects_employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT REFERENCES employees ON DELETE CASCADE,
+    project_id INT REFERENCES projects ON DELETE CASCADE
+);
