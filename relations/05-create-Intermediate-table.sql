@@ -39,8 +39,16 @@ CREATE TABLE intranet_accounts (
     password VARCHAR(300) NOT NULL
 );
 
+-- CREATE TABLE projects_employees (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     employee_id INT REFERENCES employees ON DELETE CASCADE,
+--     project_id INT REFERENCES projects ON DELETE CASCADE
+-- );
+
+-- Create a table with composite primary key
 CREATE TABLE projects_employees (
-    id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT REFERENCES employees ON DELETE CASCADE,
-    project_id INT REFERENCES projects ON DELETE CASCADE
+    project_id INT REFERENCES projects ON DELETE CASCADE,
+    PRIMARY KEY (employee_id, project_id),
+    FOREIGN KEY (employee_id) REFERENCES employees ON DELETE CASCADE
 );
