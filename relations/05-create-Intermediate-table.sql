@@ -1,5 +1,13 @@
 -- DROP TABLE intranet_accounts;
 -- DROP TABLE employees;
+-- DROP TABLE teams;
+-- DROP TABLE company_buildings;
+
+CREATE TABLE projects (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(300) NOT NULL,
+    deadline DATE
+);
 
 CREATE TABLE company_buildings (
     id INT PRIMARY KEY AUTO_INCREMENT, -- Mysql
@@ -29,4 +37,18 @@ CREATE TABLE intranet_accounts (
     -- id SERIAL PRIMARY KEY,
     email VARCHAR(300) REFERENCES employees (email) ON DELETE CASCADE, -- Here we type (email) because it's not PRIMARY KEY that we can delete, so here when an employee is deleted his interanet_account delete also
     password VARCHAR(300) NOT NULL
+);
+
+-- CREATE TABLE projects_employees (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     employee_id INT REFERENCES employees ON DELETE CASCADE,
+--     project_id INT REFERENCES projects ON DELETE CASCADE
+-- );
+
+-- Create a table with composite primary key
+CREATE TABLE projects_employees (
+    employee_id INT REFERENCES employees ON DELETE CASCADE,
+    project_id INT REFERENCES projects ON DELETE CASCADE,
+    PRIMARY KEY (employee_id, project_id),
+    FOREIGN KEY (employee_id) REFERENCES employees ON DELETE CASCADE
 );
