@@ -3,5 +3,17 @@
 -- SELECT CONVERT(last_checkin, DATE), CONVERT(last_checkin, TIME)
 -- FROM memberships;
 
-SELECT last_checkin::TIMESTAMP::DATE, last_checkin::TIMESTAMP::TIME
+/* SELECT last_checkin::TIMESTAMP::DATE, last_checkin::TIMESTAMP::TIME
+FROM memberships; */ 
+
+-- MySQL
+SELECT TIMESTAMPDIFF(MINUTE, last_checkin, last_checkout)
+FROM memberships; 
+
+-- postgreSQL
+SELECT NOW() - membership_start
+-- FROM memberships;
+
+-- mySQL
+SELECT DATEDIFF(NOW(), membership_start)
 FROM memberships;
