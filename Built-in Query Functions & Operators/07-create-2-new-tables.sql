@@ -27,7 +27,7 @@ VALUES(
     'Khaled',
     'mona@test.com'
 ),(
-    'Alli',
+    'Ali',
     'Morad',
     'morad@test.com'
 );
