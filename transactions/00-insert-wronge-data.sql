@@ -4,9 +4,9 @@ INSERT INTO customers(
     email
 )
 VALUES(
-    'Maria',
-    'Jones',
-    'maria@test.com'
+    'Saed2',
+    'Samy',
+    'ss2@test.com'
 );
 
 INSERT INTO orders(
@@ -14,6 +14,6 @@ INSERT INTO orders(
    customer_id 
 )
 VALUES(
-    103.12
+    99.89
     -- Missing data here
 );
